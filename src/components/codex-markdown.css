@@ -1,0 +1,48 @@
+.codex-markdown {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  --code-bg: color-mix(in srgb, var(--text-primary) 5%, var(--panel-bg));
+  --code-keyword: color-mix(in srgb, var(--accent) 78%, var(--text-primary));
+  --code-string: #8cbd9b;
+  --code-number: #d7ac80;
+  --code-title: #9dbcec;
+}
+.app-shell[data-theme='light'] .codex-markdown { --code-string: #347744; --code-number: #995d24; --code-title: #376ca4; }
+.codex-markdown > :first-child { margin-top: 0; }
+.codex-markdown > :last-child { margin-bottom: 0; }
+.codex-markdown :is(h1, h2, h3, h4, h5, h6) { margin: 16px 0 8px; font-size: 13px; font-weight: 600; line-height: 1.6; }
+.codex-markdown p { margin: 0 0 10px; }
+.codex-markdown :is(ul, ol) { margin: 8px 0 12px; padding-left: 20px; }
+.codex-markdown li { margin: 4px 0; }
+.codex-markdown .contains-task-list { padding-left: 0; list-style: none; }
+.codex-markdown .task-list-item { padding-left: 0; }
+.codex-markdown .task-list-item > input { margin: 0 6px 0 0; vertical-align: middle; accent-color: var(--accent); }
+.codex-markdown code { padding: 1px 4px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; background: var(--code-bg); }
+.codex-markdown .codex-code-block { min-width: 0; max-width: 100%; margin: 12px 0; overflow: hidden; border: 1px solid var(--border); border-radius: 7px; background: var(--code-bg); }
+.codex-markdown .codex-code-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 9px; border-bottom: 1px solid var(--border); font-size: 10px; color: var(--text-secondary); }
+.codex-markdown .codex-code-language { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.codex-markdown .codex-code-heading > button { display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; padding: 3px 4px; border-radius: 4px; color: var(--text-secondary); font-size: 10px; }
+.codex-markdown .codex-code-heading > button:hover { background: var(--hover-bg); color: var(--text-primary); }
+.codex-markdown .codex-code-block > pre { max-width: 100%; overflow-x: auto; margin: 0; padding: 10px; border: 0; border-radius: 0; background: transparent; line-height: 1.7; overscroll-behavior-x: contain; tab-size: 2; white-space: pre; overflow-wrap: normal; }
+.codex-markdown .codex-code-block > pre > code { display: block; width: max-content; min-width: 100%; padding: 0; border-radius: 0; background: transparent; font-size: 11px; white-space: inherit; overflow-wrap: normal; }
+.codex-markdown .codex-table-scroll { max-width: 100%; margin: 12px 0; overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; overscroll-behavior-x: contain; }
+.codex-markdown table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 11px; line-height: 1.65; }
+.codex-markdown :is(th, td) { padding: 7px 9px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); text-align: left; white-space: nowrap; }
+.codex-markdown th { background: var(--code-bg); font-weight: 600; }
+.codex-markdown tr:last-child td { border-bottom: 0; }
+.codex-markdown :is(th, td):last-child { border-right: 0; }
+.codex-markdown .katex { font-size: 1.08em; }
+.codex-markdown .katex-display { max-width: 100%; margin: 12px 0; padding: 5px 0 7px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; }
+.codex-markdown .katex-display > .katex { display: block; width: max-content; min-width: 100%; text-align: center; }
+.codex-markdown p .katex:not(.katex-display .katex) { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
+.codex-markdown .katex-error { max-width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; overflow-wrap: anywhere; }
+.codex-markdown .hljs-comment, .codex-markdown .hljs-quote { color: var(--text-secondary); font-style: italic; }
+.codex-markdown :is(.hljs-keyword, .hljs-selector-tag, .hljs-type, .hljs-doctag, .hljs-meta) { color: var(--code-keyword); }
+.codex-markdown :is(.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute) { color: var(--code-string); }
+.codex-markdown :is(.hljs-number, .hljs-literal, .hljs-symbol, .hljs-bullet) { color: var(--code-number); }
+.codex-markdown :is(.hljs-title, .hljs-section, .hljs-built_in, .hljs-attr, .hljs-selector-class) { color: var(--code-title); }
+.codex-markdown .hljs-deletion { color: #d58686; }
+.codex-markdown .hljs-emphasis { font-style: italic; }
+.codex-markdown .hljs-strong { font-weight: 600; }
+.codex-markdown .codex-image-alt { color: var(--text-secondary); }

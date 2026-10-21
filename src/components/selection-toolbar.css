@@ -1,0 +1,13 @@
+.pdf-selection-toolbar { position: absolute; z-index: 24; display: flex; align-items: center; box-sizing: border-box; height: 40px; padding: 4px; border: 1px solid #ffffff0c; border-radius: 8px; color: #f5f5f5; background: #4a4a4a; box-shadow: 0 3px 12px #0003; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; user-select: none; -webkit-user-select: none; overscroll-behavior-x: contain; }
+.pdf-selection-toolbar::-webkit-scrollbar { display: none; }
+.pdf-selection-toolbar > button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 40px; height: 32px; border-radius: 5px; padding: 0; color: inherit; }
+.pdf-selection-toolbar > button:hover:not(:disabled) { background: #ffffff12; }
+.pdf-selection-toolbar > button:active:not(:disabled) { background: #ffffff1c; }
+.pdf-selection-toolbar > button:disabled { opacity: .35; cursor: default; }
+.pdf-selection-toolbar > .selection-ai { flex-basis: 86px; gap: 6px; font-size: 12px; white-space: nowrap; }
+.pdf-selection-toolbar .codex-orb { display: grid; place-items: center; width: 24px; height: 24px; flex-shrink: 0; margin: 0; border-radius: 50%; color: #fff; background: radial-gradient(circle at 32% 26%, #a2bfff, #7779ff 50%, #5069d5 85%); box-shadow: 0 0 5px #8c9aff88, inset 0 0 0 1px #b9c9ff77; }
+.pdf-selection-toolbar.is-compact > .selection-ai { flex-basis: 40px; }
+.pdf-selection-toolbar.is-compact .selection-ai-label { display: none; }
+.pdf-selection-toolbar.is-compact > .selection-reference { display: none; }
+.selection-toolbar-divider { display: block; flex: 0 0 16px; height: 20px; position: relative; }
+.selection-toolbar-divider::after { content: ''; position: absolute; left: 7px; top: 1px; width: 1px; height: 18px; background: #ffffff20; }

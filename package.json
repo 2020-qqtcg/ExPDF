@@ -1,0 +1,66 @@
+{
+  "name": "expdf",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "postinstall": "node scripts/copy-pdf-assets.mjs",
+    "test:e2e": "playwright test",
+    "desktop": "npm run build && electron .",
+    "test:desktop": "node --test tests/desktop-smoke.mjs tests/desktop-agent.mjs tests/desktop-brand.mjs",
+    "package:mac": "npm run build && electron-builder --mac dmg --arm64 --publish never",
+    "package:mac:dir": "npm run build && electron-builder --mac --dir --arm64"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "katex": "^0.19.0",
+    "lucide-react": "^0.468.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "1.0.11",
+    "@playwright/test": "^1.56.1",
+    "@types/mdast": "4.0.4",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "electron": "^44.9.1",
+    "electron-builder": "^26.15.3",
+    "mdast-util-math": "3.0.0",
+    "remark-parse": "11.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "unified": "11.0.5",
+    "vfile": "6.0.3",
+    "vite": "^7.1.12"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "overrides": {
+    "katex": "$katex"
+  },
+  "main": "desktop/main.mjs",
+  "description": "A lightweight PDF reader that connects to your local Codex CLI and existing subscription for AI-powered reading.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2020-qqtcg/ExPDF.git"
+  },
+  "homepage": "https://github.com/2020-qqtcg/ExPDF#readme",
+  "bugs": {
+    "url": "https://github.com/2020-qqtcg/ExPDF/issues"
+  },
+  "author": "ExPDF"
+}

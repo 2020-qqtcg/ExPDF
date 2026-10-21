@@ -1,0 +1,27 @@
+.control-tooltip {
+  position: fixed;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(300px, calc(100vw - 16px));
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px var(--shadow);
+  font-size: 11px;
+  line-height: 1.45;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.control-tooltip[data-placement="top"] { transform: translateY(3px); }
+.control-tooltip[data-visible="true"] { visibility: visible; opacity: 1; transform: translateY(0); }
+.control-tooltip kbd { flex-shrink: 0; color: var(--text-secondary); font-family: inherit; font-size: 10px; }
+@media (prefers-reduced-motion: reduce) {
+  .control-tooltip, .control-tooltip[data-placement="top"] { transform: none; transition: none; }
+}

@@ -1,0 +1,131 @@
+.pdf-page {
+  box-sizing: content-box;
+  position: relative;
+  flex: none;
+  background: #fff;
+  isolation: isolate;
+  overflow: hidden;
+}
+.pdf-page-canvas { position: absolute; inset: 0; display: block; z-index: 0; }
+.pdf-page-placeholder { position: absolute; inset: 0; display: grid; place-items: center; font-size: 13px; color: #aaa6b7; pointer-events: none; background: white; }
+.pdf-page-placeholder.has-error { color: #c25e5e; }
+.pdf-page > .pdf-text-layer {
+  color-scheme: only light;
+  position: absolute;
+  text-align: initial;
+  inset: 0;
+  overflow: clip;
+  opacity: 1;
+  line-height: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  z-index: 2;
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+}
+.pdf-text-layer :is(span, br) {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.pdf-text-layer > :not(.markedContent), .pdf-text-layer .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  --scale-x: 1;
+  --rotate: 0deg;
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv));
+}
+.pdf-text-layer .markedContent { display: contents; }
+.pdf-text-layer span[role="img"] { user-select: none; cursor: default; }
+.pdf-text-layer ::selection { background: rgb(76 151 235 / 38%); color: transparent; }
+.pdf-page:is(.tool-highlight, .tool-underline, .tool-strikeout, .tool-squiggly) .pdf-text-layer ::selection { background: transparent; }
+.pdf-text-layer br::selection { background: transparent; }
+.pdf-text-layer[data-main-rotation="90"] { transform: rotate(90deg) translateY(-100%); }
+.pdf-text-layer[data-main-rotation="180"] { transform: rotate(180deg) translate(-100%, -100%); }
+.pdf-text-layer[data-main-rotation="270"] { transform: rotate(270deg) translateX(-100%); }
+.pdf-text-layer .pdf-search-mark { color: transparent; background: #ffd96599; border-radius: 2px; padding: 0; }
+.pdf-text-layer .pdf-search-mark.current { background: #ffac60bb; outline: 1px solid #d98a40; }
+.pdf-annotation-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: visible; }
+.pdf-annotation-layer.can-select .pdf-mark { pointer-events: painted; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.pdf-annotation-layer.can-select .pdf-mark.is-dragging { cursor: grabbing; }
+.pdf-page.is-annotation-dragging .pdf-text-layer { pointer-events: none; user-select: none; -webkit-user-select: none; }
+.pdf-annotation-layer.can-select .pdf-mark-hit { pointer-events: all; }
+.pdf-annotation-layer.can-select .pdf-mark:is(.pdf-mark-highlight, .pdf-mark-underline, .pdf-mark-strikeout, .pdf-mark-squiggly):not(.is-selected),
+.pdf-annotation-layer.can-select .pdf-mark:is(.pdf-mark-highlight, .pdf-mark-underline, .pdf-mark-strikeout, .pdf-mark-squiggly):not(.is-selected) * { pointer-events: none; }
+.pdf-annotation-layer .pdf-mark-outline { pointer-events: none; vector-effect: non-scaling-stroke; }
+.pdf-selection-preview, .pdf-selection-preview * { pointer-events: none; }
+.pdf-mark-highlight, .tool-highlight .pdf-selection-preview { mix-blend-mode: multiply; }
+.pdf-annotation-layer .pdf-mark:focus { outline: none; }
+.pdf-annotation-layer .pdf-mark:focus-visible { filter: drop-shadow(0 0 2px #6d5be7); }
+.pdf-page.tool-hand, .pdf-page.tool-hand * { cursor: grab; user-select: none; -webkit-user-select: none; }
+.pdf-page.tool-hand.is-panning, .pdf-page.tool-hand.is-panning * { cursor: grabbing; }
+.pdf-page.tool-draw, .pdf-page.tool-draw *, .pdf-page.tool-note, .pdf-page.tool-note * { cursor: crosshair; user-select: none; -webkit-user-select: none; }
+.pdf-page.tool-draw, .pdf-page.tool-hand { touch-action: none; }
+.pdf-page.tool-note .pdf-text-layer, .pdf-page.tool-draw .pdf-text-layer, .pdf-page.tool-hand .pdf-text-layer { pointer-events: none; }
+.pdf-page.tool-text { cursor: text; }
+.pdf-page.tool-text .pdf-text-layer { pointer-events: none; user-select: none; -webkit-user-select: none; }
+.pdf-page.tool-text .pdf-mark-text { pointer-events: painted; cursor: text; }
+.pdf-page.tool-text .pdf-mark-text .pdf-mark-hit { pointer-events: all; }
+.pdf-page .pdf-inline-text-editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  transform-origin: 0 0;
+  box-sizing: content-box;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 1px dashed #8580f5;
+  outline-offset: 3px;
+  background: rgb(255 255 255 / 80%);
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  letter-spacing: normal;
+  word-spacing: normal;
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.pdf-page .pdf-ask-codex {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 106px;
+  height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--border, #e5e5ed);
+  border-radius: 7px;
+  background: var(--panel-bg, #fff);
+  color: var(--text-primary, #303038);
+  box-shadow: 0 3px 12px #18152624;
+  font: 500 11px/1.2 system-ui, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+.pdf-page .pdf-ask-codex > svg { color: var(--accent, #7770eb); }
+.pdf-page .pdf-ask-codex:hover { background: var(--accent-light, #f1efff); border-color: var(--accent, #7770eb); }
+.pdf-page .pdf-ask-codex:focus-visible { outline: 2px solid var(--accent, #7770eb); outline-offset: 2px; }
+.thumbnail-preview { display: block; overflow: hidden; background: white; }
+.thumbnail-canvas { display: block; width: 100%; height: 100%; object-fit: contain; }

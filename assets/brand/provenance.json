@@ -1,0 +1,10 @@
+{
+  "selected": "A",
+  "tool": "built-in image_gen",
+  "asset": "assets/brand/expdf-icon.png",
+  "prompt": {
+    "id": "A",
+    "title": "墨黑字母",
+    "prompt": "Use case: logo-brand. Asset: one premium macOS app icon concept for ExPDF, a quiet focused PDF reader connected to the user's existing Codex AI subscription. Brand character: intelligent, calm, distinctive, visually refined, as restrained as an excellent native reading app. Single icon, front orthographic view, centered, square composition; a large smooth macOS rounded-square tile occupies about 88% of the canvas, outer corners/margins fully transparent. A single bold memorable symbol, generous negative space, strongly legible at 32px. Controlled subtle depth and extremely clean precision, not a flat clipart stock document. No captions, no wordmark outside the symbol, no PDF text, no official OpenAI logo, no robot, no sparkle/star ornament, no mockup scene, no camera perspective, no glass haze, no wallpaper. High quality finished icon artwork, not a contact sheet. Direction A: an almost-black warm graphite tile, an oversized ivory custom 'ex' typographic ligature as the only symbol. Draw the lowercase letters into one balanced, compact geometric mark with shared optical rhythm; the e has a confident horizontal aperture and flows into the x. Slightly rounded terminals, broad strokes, lots of deliberate negative space. A sober timeless monochrome identity. Very restrained shallow bevel, matte ink and porcelain, no chrome or dramatic shiny surfaces. No separate page, bookmark or chat bubble. The 'ex' itself is the entire icon."
+  }
+}

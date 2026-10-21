@@ -1,0 +1,15 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+tmp/
+.DS_Store
+*.tsbuildinfo
+
+release/
+output/
+public/pdfjs/
+.env
+.env.*
+!.env.example
+*.log

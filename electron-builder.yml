@@ -1,0 +1,37 @@
+appId: com.folio.pdfreader
+productName: ExPDF
+directories:
+  output: release/${version}
+files:
+  - dist/**/*
+  - desktop/**/*
+  - server/**/*
+  - package.json
+electronDist: node_modules/electron/dist
+asar: true
+npmRebuild: false
+mac:
+  target:
+    - target: dmg
+      arch: [arm64]
+  category: public.app-category.productivity
+  icon: desktop/resources/icon.icns
+  identity: '-'
+  hardenedRuntime: false
+  notarize: false
+fileAssociations:
+  - ext: pdf
+    name: PDF 文档
+    mimeType: application/pdf
+    role: Viewer
+    rank: Alternate
+dmg:
+  title: ExPDF
+  contents:
+    - x: 170
+      y: 190
+      type: file
+    - x: 470
+      y: 190
+      type: link
+      path: /Applications

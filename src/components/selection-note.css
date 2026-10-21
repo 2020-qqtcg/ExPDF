@@ -1,0 +1,14 @@
+.pdf-selection-note { position: absolute; z-index: 25; display: flex; flex-direction: column; height: 400px; box-sizing: border-box; overflow: hidden; border: 1px solid #c6c381; border-radius: 7px; background: #fffc9e; color: #454431; box-shadow: 0 5px 20px #0003; font-size: 14px; }
+.pdf-selection-note > header { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex-shrink: 0; padding: 14px 16px 10px; font-size: 13px; }
+.pdf-selection-note > header > strong { font-weight: 600; }
+.pdf-selection-note time { color: #75734e; font-size: 11px; }
+.pdf-selection-note > textarea { flex: 1; width: 100%; min-height: 40px; margin: 0; padding: 6px 16px 16px; border: 0; outline: none; resize: none; background: transparent; color: #454431; font: inherit; font-size: 14px; line-height: 1.7; }
+.pdf-selection-note > textarea::placeholder { color: #898659; }
+.pdf-selection-note > textarea:focus-visible { outline: none; }
+.pdf-selection-note > footer { display: flex; align-items: center; gap: 6px; flex-shrink: 0; height: 42px; padding: 5px 8px; background: #4a4a4a; color: #f5f5f5; }
+.pdf-selection-note > footer > span { flex: 1; }
+.pdf-selection-note > footer > button { height: 29px; padding: 0 10px; border-radius: 5px; font-size: 11px; }
+.pdf-selection-note > footer > button:hover { background: #ffffff12; }
+.pdf-selection-note > footer > .selection-note-done { background: #8176ff; color: #fff; }
+.pdf-selection-note > footer > .selection-note-done:hover { background: #9187ff; }
+.selection-note-error { padding: 0 12px 7px; color: #a3493f; font-size: 10px; }
