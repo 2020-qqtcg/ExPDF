@@ -2,58 +2,60 @@
 
 # ExPDF
 
+**English** | [简体中文](README.zh-CN.md)
+
 A lightweight PDF reader that works with your existing Codex subscription.
 
-ExPDF 将 PDF 阅读、批注和 Codex 问答放在同一个窗口。沿用本机 Codex 的登录和订阅，选中段落就能解释、翻译、概括，也可以直接提问、查找文中的相关内容。
+Read, annotate, and ask Codex about a PDF in one window. ExPDF uses the sign-in and subscription from your local Codex CLI. Select a passage for an explanation, translation, or summary, or ask a question and find related content in the document.
 
-[下载 macOS 版](https://github.com/2020-qqtcg/ExPDF/releases/download/v1.0.0/ExPDF-1.0.0-arm64.dmg) · [v1.0.0 Release](https://github.com/2020-qqtcg/ExPDF/releases/tag/v1.0.0) · [更新记录](CHANGELOG.md)
+[Download for macOS](https://github.com/2020-qqtcg/ExPDF/releases/download/v1.0.0/ExPDF-1.0.0-arm64.dmg) · [v1.0.0 Release](https://github.com/2020-qqtcg/ExPDF/releases/tag/v1.0.0) · [Changelog](CHANGELOG.md)
 
-![ExPDF 界面：左侧页面缩略图、中间 PDF 阅读与高亮、右侧 Codex 问答](assets/screenshots/reader.jpg)
+![ExPDF with page thumbnails on the left, a highlighted PDF in the center, and a Codex conversation on the right](assets/screenshots/reader.jpg)
 
-图中的 PDF 与问答均为演示内容。
+The PDF and conversation shown here are demo content.
 
-## 用 Codex 读 PDF
+## Read with Codex
 
-点击阅读工具栏中的 AI 图标即可提问。选中文字后，也可以在浮动工具条中点击“问 Codex”，带着引用继续聊。
+Click the AI button in the reading toolbar to ask a question. You can also select text and choose **Ask Codex** from the floating toolbar to discuss a specific passage.
 
-- 解释段落、翻译、概括要点，结合当前页内容继续追问。
-- 搜索文档、读取相关页面、跳转到原文，还可以让助手添加高亮和便签。
-- 为同一份 PDF 新建多场聊天，随时切回历史会话。
-- 在输入框底部选择模型和思考深度，拖动侧栏边缘调整阅读宽度。
-- 回答中直接阅读表格、公式和代码，复制代码或打开生成的文档。
+- Explain passages, translate, summarize key points, and ask follow-up questions about the current page.
+- Search the document, read related pages, jump to the source, or ask the assistant to add highlights and notes.
+- Start separate conversations for the same PDF and return to previous chats.
+- Choose a model and reasoning effort at the bottom of the input box. Drag the sidebar edge to adjust its width.
+- Read tables, equations, and code in answers, copy code, or open generated documents.
 
-助手还可调用本机 Codex 已配置的工具进行联网检索、终端计算和文件处理。执行记录、需要确认的操作和补充问题会显示在侧栏中。
+The assistant can also use tools configured in your local Codex for web research, terminal calculations, and file processing. Activity, approval requests, and follow-up questions appear in the sidebar.
 
-## 阅读与批注
+## Reading and annotation
 
-- **多文档阅读**：一次打开或拖入多份 PDF，通过标签切换。各文档保留自己的阅读位置、缩放、搜索和聊天草稿；重启后可继续阅读。
-- **快速定位**：通过缩略图、目录、页码、全文搜索和书签找到内容，支持连续滚动、适合宽度、旋转和拖动阅读。
-- **常用批注**：选中文字后直接高亮、添加下划线、删除线或波浪线，也可添加便签和自由绘制。标注可以编辑、移动、删除、撤销和重做。
-- **添加文字**：点击页面输入文字，调整字体、字号、颜色、粗体、斜体、对齐和行距，支持本机字体及导入字体。
+- **Multiple PDFs**: Open or drop in several files and switch between tabs. Each document keeps its own reading position, zoom, search, and chat draft as you switch. Reopen the app to continue reading.
+- **Navigation**: Find content through thumbnails, the table of contents, page numbers, full-text search, and bookmarks. Read continuously, fit pages to width, rotate them, or pan around the page.
+- **Markup**: Select text to highlight, underline, strike through, or add a squiggly underline. Add notes or draw freehand. Annotations can be edited, moved, deleted, undone, and redone.
+- **Text annotations**: Click a page to add text. Adjust the font, size, color, bold, italic, alignment, and line spacing using local or imported fonts.
 
-阅读记录与批注会自动保存在本机。“保存”将标注写入当前 PDF，“另存为”可保存一份新文件。最近阅读中可以重新打开之前的文档。
+Reading progress and annotations are saved locally as you work. **Save** writes annotations to the current PDF; **Save As** creates a new file. Reopen earlier documents from **Recent Documents**.
 
-页面默认适合宽度，调整窗口或展开侧栏时会跟随适配。也可以用触控板捏合或 Ctrl + 鼠标滚轮缩放。
+Pages fit the available width by default and adjust when you resize the window or open a sidebar. You can also zoom with a trackpad pinch or Ctrl + mouse wheel.
 
-## 安装
+## Install
 
-适用于 **macOS 13 或更新版本，Apple silicon（arm64）**。
+For **macOS 13 or later on Apple silicon (arm64)**.
 
-1. 下载并打开 `ExPDF-1.0.0-arm64.dmg`。
-2. 将 `ExPDF.app` 拖入“应用程序”。
-3. 启动 ExPDF，打开或拖入 PDF。
+1. Download and open `ExPDF-1.0.0-arm64.dmg`.
+2. Drag `ExPDF.app` into Applications.
+3. Launch ExPDF and open or drop in a PDF.
 
-使用 AI 助手前，按 [Codex CLI 安装说明](https://learn.chatgpt.com/docs/codex/cli)安装 Codex，并用 ChatGPT 账户登录：
+To use the AI assistant, follow the [Codex CLI installation guide](https://learn.chatgpt.com/docs/codex/cli), then sign in with your ChatGPT account:
 
 ```bash
 codex login
 ```
 
-ExPDF 会使用本机 Codex 已有的登录和订阅，无需在应用中另行配置 API Key。已经登录 Codex 的用户可以直接开始提问。
+ExPDF uses your existing local Codex sign-in and subscription without a separate API key in the app. If you are already signed in to Codex, you can start asking questions right away.
 
-## 从源码运行
+## Run from source
 
-需要 **Node.js 22.13+**，推荐 Node.js 24 LTS。
+Requires **Node.js 22.13+**. Node.js 24 LTS is recommended.
 
 ```bash
 git clone https://github.com/2020-qqtcg/ExPDF.git
@@ -62,36 +64,36 @@ npm ci
 npm run desktop
 ```
 
-构建 macOS Apple silicon 安装包：
+Build the macOS Apple silicon installer:
 
 ```bash
 npm run package:mac
 ```
 
-产物为 `release/1.0.0/ExPDF-1.0.0-arm64.dmg`，应用目录为 `release/1.0.0/mac-arm64/ExPDF.app`。
+The installer is written to `release/1.0.0/ExPDF-1.0.0-arm64.dmg`, and the app is in `release/1.0.0/mac-arm64/ExPDF.app`.
 
-在浏览器中开发或预览：
+Develop or preview in a browser:
 
 ```bash
 npm run dev
-# 生产构建与预览
+# Production build and preview
 npm run build
 npm run preview
 ```
 
-打开终端显示的本地地址。
+Open the local URL shown in the terminal.
 
-## 常用快捷键
+## Keyboard shortcuts
 
-| 操作 | 快捷键 |
+| Action | Shortcut |
 | --- | --- |
-| 打开 PDF | ⌘/Ctrl + O |
-| 搜索文档 | ⌘/Ctrl + F |
-| 保存 / 另存为 | ⌘/Ctrl + S / ⌘/Ctrl + Shift + S |
-| 关闭当前标签 | ⌘/Ctrl + W |
-| 下一个 / 上一个标签 | Ctrl + Tab / Ctrl + Shift + Tab |
-| 撤销 / 重做 | ⌘/Ctrl + Z / ⌘/Ctrl + Shift + Z |
-| 选择文字 / 拖动阅读 | V / H |
-| 完成便签或页面文字 | ⌘/Ctrl + Enter |
-| 发送问题 / 换行 | Enter / Shift + Enter |
-| 取消当前编辑 | Escape |
+| Open PDF | ⌘/Ctrl + O |
+| Search document | ⌘/Ctrl + F |
+| Save / Save As | ⌘/Ctrl + S / ⌘/Ctrl + Shift + S |
+| Close current tab | ⌘/Ctrl + W |
+| Next / previous tab | Ctrl + Tab / Ctrl + Shift + Tab |
+| Undo / redo | ⌘/Ctrl + Z / ⌘/Ctrl + Shift + Z |
+| Select text / pan | V / H |
+| Finish a note or text annotation | ⌘/Ctrl + Enter |
+| Send question / new line | Enter / Shift + Enter |
+| Cancel editing | Escape |
