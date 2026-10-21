@@ -8,7 +8,7 @@ ExPDF 将 PDF 阅读、批注和 Codex 问答放在同一个窗口。沿用本�
 
 [下载 macOS 版](https://github.com/2020-qqtcg/ExPDF/releases/download/v1.0.0/ExPDF-1.0.0-arm64.dmg) · [v1.0.0 Release](https://github.com/2020-qqtcg/ExPDF/releases/tag/v1.0.0) · [更新记录](CHANGELOG.md)
 
-![ExPDF 界面：左侧页面缩略图、中间 PDF 阅读与高亮、右侧 Codex 问答](assets/screenshots/reader.png)
+![ExPDF 界面：左侧页面缩略图、中间 PDF 阅读与高亮、右侧 Codex 问答](assets/screenshots/reader.jpg)
 
 图中的 PDF 与问答均为演示内容。
 
